@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${targetUser.getName()}+' '+${targetUser.getLastName()}"></title>
+    <link rel="stylesheet" type="text/css" th:href="'/css/'+${user.getTheme()}+'/AccountPage.css'" />
+    <link rel="stylesheet" type="text/css" th:href="'/css/'+${user.getTheme()}+'/Fragments.css'" />
+    <script src="/js/AccountPage.js" type="application/javascript"></script>
+    <script src="/js/Fragments.js" type="application/javascript"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+</head>
+<body>
+    <header th:replace="~{fragments::mainHeader}"></header>
+
+    <main>
+        <article class="user">
+            <section class="userMainInfo">
+                <div class="userAvatar">
+                    <img th:src="${targetUser.getAvatarPath()}">
+                </div>
+                <div class="userInfo">
+                    <h2 th:text="${targetUser.getName()}"></h2>
+                    <h2 th:text="${targetUser.getLastName()}"></h2>
+                    <h3 th:text="'@'+${targetUser.getIdentifiant()}"></h3>
+                </div>
+            </section>
+            <div th:if="${description}" class="userDescription">
+                <p th:text="${targetUser.getDescription()}"></p>
+            </div>
+            <div class="userOtherInfo">
+                <div class="stalkInfo">
+                    <p th:text="${numberOfStalks}+' stalks'" class="leftP"></p>
+                    <p th:text="'Date de naissance : '+${targetUser.getDob()}" class="rightP"></p>
+                </div>
+                <div class="secondaryInfo">
+                    <p th:text="${numberOfPosts}+' posts'" class="leftP"></p>
+                    <p th:text="${targetUser.getMail()}" class="rightP"></p>
+                </div>
+            </div>
+            <div th:unless="${same}" class="stalkSection">
+                <button th:id="'stalk'+${targetUser.getId()}" class="stalkBtn" th:unless="${stalk}">Stalker</button>
+                <button th:id="'unstalk'+${targetUser.getId()}"  class="unstalkBtn" th:if="${stalk}">Arrêter de stalker</button>
+            </div>
+        </article>
+
+        <article class="post" th:each="post: ${posts}" th:id="'post'+${post.getId()}">
+            <section class="postHeader">
+                <img class="postAuthorAvatar" th:src="${post.author.getAvatarPath()}">
+                <h2 class="postAuthor"><a th:href="'/private/account?id='+${post.author.getIdentifiant()}" th:text="${post.author.getName()}+' '+${post.author.getLastName()}"></a></h2>
+                <p class="postDate" th:text="'Le '+${post.dateOfPublication}+' à '+${post.getTimeOfPublication()}"></p>
+            </section>
+            <section class="postOption" th:if="${post.author.getId() == user.getId()}">
+                <button th:id="'sp'+${post.getId()}" class="delPostButton">Supprimer le post</button>
+            </section>
+            <section class="postBody">
+                <p class="postTexte" th:text="${post.texte}"></p>
+            </section>
+            <section class="postLike">
+                <p th:text="${post.getNumberOfLike()}+' likes'"></p>
+                <button th:unless="${isExistaLikeOfUserOnPost.get(post.getId())}" class="likeBtn" th:id="'lb'+${post.getId()}">
+                    <img src="/logos/coeur_gris.png">
+                    Poser un like
+                </button>
+                <button th:if="${isExistaLikeOfUserOnPost.get(post.getId())}" class="dislikeBtn" th:id="'db'+${post.getId()}">
+                    <img src="/logos/coeur_rouge.png">
+                    Reprendre mon like
+                </button>
+            </section>
+        </article>
+    </main>
+
+    <footer th:replace="~{fragments::footer}"></footer>
+</body>
+</html>

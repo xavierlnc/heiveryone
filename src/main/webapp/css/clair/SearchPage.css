@@ -1,0 +1,85 @@
+/*
+- Body -
+ */
+main {
+    margin: auto 30%;
+}
+
+main h2 {
+    font-size: 3em;
+}
+
+main .card {
+    display: block;
+    text-decoration: none;
+}
+
+main .userCard {
+    padding: 0;
+    margin: 1em auto;
+    height: 10em;
+    border: 1px solid #dd3f3f;
+    border-radius: 0.3em 3em 0.3em 3em;
+    display: flex;
+    background-color: white;
+    min-width: 30em;
+    transition: background-color 0.1s;
+}
+
+main .userCard:hover {
+    background-color: lightgrey;
+}
+
+main .userAvatar {
+    width: 20%;
+    min-width: 10em;
+    text-align: center;
+}
+
+main img {
+    margin: 1.5em;
+    width: 7em;
+    height: 7em;
+    border-radius: 100%;
+    border: 2px solid #dd3f3f;
+}
+
+main .userInfo {
+    width: 80%;
+}
+
+main .userInfoHeader {
+    height: 30%;
+    width: 100%;
+    background-color: #dd3f3f;
+    padding: 0.5em 0;
+    display: flex;
+    align-items: center;
+    border-top-right-radius: 3em;
+    border-bottom-left-radius: 3em;
+}
+
+main h3.userName {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    font-size: 1.3em;
+    width: 60%;
+    padding-left: 1em;
+}
+
+main p.userIdentifiant {
+    text-align: right;
+    color: white;
+    font-size: 1.3em;
+    margin: 0;
+    padding-right: 1em;
+    width: 40%;
+}
+
+main .userInfoBody {
+    height: 70%;
+    width: 100%;
+    padding: 1em;
+    color: black;
+}

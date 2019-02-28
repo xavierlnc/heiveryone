@@ -1,0 +1,109 @@
+/*
+- body -
+ */
+
+main {
+    margin: 0;
+    display: flex;
+}
+
+main article {
+    border-radius: 0.3em;
+    margin: 1em;
+}
+
+main article.userManagement {
+    text-align: center;
+    width: 60%;
+}
+
+main article section.headerSection {
+    background-color: black;
+    padding: 1em;
+}
+
+main article section.headerSection h2 {
+    margin: 0;
+    color: white;
+}
+
+main article section.bodySection {
+    border-top: 1px solid #f00000;
+    padding: 1em;
+    background-color: #3e3e3e;
+}
+
+main article.userManagement .bodySection {
+    overflow-x: scroll;
+}
+
+main article.userManagement table.listUser {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
+}
+
+main article.userManagement table tr.userLine th, main article.userManagement table tr.userLine td {
+    border-top: 2px solid #dd3f3f;
+}
+
+main article.addUser {
+    text-align: center;
+    width: 40%;
+    height: min-content;
+}
+
+main article.addUser h3.idUsed {
+    color: #f00000;
+}
+
+main article.addUser table.newUser {
+    width: 100%;
+    margin: 0;
+}
+
+main article.addUser th  {
+    text-align: right;
+    font-weight: normal;
+    padding: 0.5em;
+ }
+
+
+main tr p {
+    color: white;
+}
+
+main article.addUser th label {
+    color: white;
+}
+
+main article.addUser td  {
+    text-align: left;
+    padding: 0.5em;
+}
+
+.txtbox {
+    border: none;
+    padding: 0.5em;
+}
+
+main article button {
+    border: none;
+    background-color: #f00000;
+    height: 2em;
+    padding: 0.5em;
+    border-radius: 1em;
+    font-size: 1em;
+    color: white;
+}
+
+main article button:hover {
+    background-color: #dd3f3f;
+    color: lightgrey;
+}
+
+/* JS */
+.wrongTxtbox {
+    border: 2px solid #dd3f3f;
+    padding: 0.5em;
+}

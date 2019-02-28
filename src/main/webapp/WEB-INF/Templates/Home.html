@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" th:href="'/css/'+${user.getTheme()}+'/HomePage.css'" />
+    <link rel="stylesheet" type="text/css" th:href="'/css/'+${user.getTheme()}+'/Fragments.css'" />
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <script src="/js/Fragments.js" type="application/javascript"></script>
+    <script src="/js/HomePage.js" type="application/javascript"></script>
+</head>
+<body>
+    <header th:replace="~{fragments::mainHeader}"></header>
+
+    <div class="mainBody">
+
+        <aside th:replace="~{fragments::propositionOfStalk}"></aside>
+
+        <main>
+            <article class="newpost">
+                <h2 class="newPostTitle" th:text="'Quoi de neuf '+${user.getName()}+' ?'"></h2>
+                <textarea name="newPostText" rows="8" cols="50" placeholder="Ecrivez quelque chose..." wrap="hard" id="newPostText"></textarea>
+                <button class="btn" id="btn">Publier</button>
+            </article>
+
+            <article class="post" th:each="post: ${posts}" th:id="'post'+${post.getId()}">
+                <section class="postHeader">
+                    <img class="postAuthorAvatar" th:src="${post.author.getAvatarPath()}">
+                    <h2 class="postAuthor"><a th:href="'/private/account?id='+${post.author.getId()}" th:text="${post.author.getName()}+' '+${post.author.getLastName()}"></a></h2>
+                    <p class="postDate" th:text="'Le '+${post.dateOfPublication}+' à '+${post.getTimeOfPublication()}"></p>
+                </section>
+                <section class="postOption" th:if="${post.author.getId() == user.getId()}">
+                    <button th:id="'sp'+${post.getId()}" class="delPostButton">Supprimer le post</button>
+                </section>
+                <section class="postBody">
+                    <p class="postTexte" th:text="${post.texte}"></p>
+                </section>
+                <section class="postLike">
+                    <p th:text="${post.getNumberOfLike()}+' likes'"></p>
+                    <button th:unless="${isExistaLikeOfUserOnPost.get(post.getId())}" class="likeBtn" th:id="'lb'+${post.getId()}">
+                        <img src="/logos/coeur_gris.png">
+                        Poser un like
+                    </button>
+                    <button th:if="${isExistaLikeOfUserOnPost.get(post.getId())}" class="dislikeBtn" th:id="'db'+${post.getId()}">
+                        <img src="/logos/coeur_rouge.png">
+                        Reprendre mon like
+                    </button>
+                </section>
+            </article>
+        </main>
+
+    </div>
+
+    <footer th:replace="~{fragments::footer}"></footer>
+</body>
+</html>

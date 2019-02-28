@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Administration</title>
+    <link rel="stylesheet" type="text/css" th:href="'/css/'+${user.getTheme()}+'/Fragments.css'" />
+    <link rel="stylesheet" type="text/css" th:href="'/css/'+${user.getTheme()}+'/Administration.css'" />
+    <script src="/js/Fragments.js" type="application/javascript"></script>
+    <script src="/js/AdministrationPage.js" type="application/javascript"></script>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+</head>
+<body>
+    <header th:replace="~{fragments::mainHeader}"></header>
+
+    <main>
+        <article class="userManagement">
+            <section class="headerSection">
+                <h2>Administration des utilisateurs</h2>
+            </section>
+            <section class="bodySection">
+                <table class="listUser">
+                    <tr>
+                        <th><p>Identifiant</p></th>
+                        <th><p>Type de compte</p></th>
+                        <th><p>Nom</p></th>
+                        <th><p>Prenom</p></th>
+                        <th><p>Date de naissance</p></th>
+                        <th><p>Adresse e-mail</p></th>
+                    </tr>
+                    <tr th:each="user: ${users}" class="userLine">
+                        <th><p th:text="${user.getIdentifiant()}"></p></th>
+                        <td>
+                            <select th:id="'us'+${user.getId()}" name="userStatus">
+                                <option value="true" th:selected="${user.isAdmin()}">Administrateur</option>
+                                <option value="false" th:selected="${!user.isAdmin()}">Utilisateur</option>
+                            </select>
+                        </td>
+                        <td><p th:text="${user.getName()}"></p></td>
+                        <td><p th:text="${user.getLastName()}"></p></td>
+                        <td><p th:text="${user.getDob()}"></p></td>
+                        <td><p th:text="${user.getMail()}"></p></td>
+                        <td><button class="saveButton" th:id="'s'+${user.getId()}">Modifier</button></td>
+                        <td><button class="delButton" th:id="'d'+${user.getId()}">Supprimer</button></td>
+                    </tr>
+                </table>
+            </section>
+        </article>
+
+        <article class="addUser">
+            <section class="headerSection">
+                <h2>Ajouter un utilisateur</h2>
+            </section>
+            <section class="bodySection">
+                <table class="newUser">
+                    <tr>
+                        <th><label for="name">Prenom :</label></th>
+                        <td><input type="text" name="name" id="name" class="txtbox"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="lastName">Nom :</label></th>
+                        <td><input type="text" name="lastName" id="lastName" class="txtbox"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="dob">Date de naissance :</label></th>
+                        <td><input type="date" name="dob" id="dob" class="txtbox"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="mail">E-mail :</label></th>
+                        <td><input type="email" name="mail" id="mail" class="txtbox"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="identifiant">Identifiant :</label></th>
+                        <td><input type="text" name="identifiant" id="identifiant" class="txtbox"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="pass">Mot de passe :</label></th>
+                        <td><input type="password" name="pass" id="pass" class="txtbox"></td>
+                    </tr>
+                </table>
+                <button id="addUserBtn">Ajouter</button>
+            </section>
+        </article>
+    </main>
+
+    <footer th:replace="~{fragments::footer}"></footer>
+</body>
+</html>

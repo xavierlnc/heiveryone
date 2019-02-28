@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragments</title>
+</head>
+<body>
+    <header th:fragment="mainHeader">
+        <h1><a href="/private/Home">Heiveryone</a></h1>
+        <div class="searchArea">
+            <div class="searchBar">
+                <input type="text" name="rechercher" placeholder="Rechercher..." id="rechercher"/>
+                <button id="searchButton">
+                    <img src="/logos/loupe.png">
+                </button>
+            </div>
+            <ul id="searchList">
+            </ul>
+        </div>
+        <div class="userInfo">
+            <div class="userAvatar">
+                <img th:src="${user.getAvatarPath()}">
+            </div>
+            <a th:href="'/private/account?id='+${user.getId()}"><h2 th:text="${user.getName()}+' '+${user.getLastName()}"></h2></a>
+        </div>
+        <nav>
+            <button class="navHeader" id="navButton">
+                <img src="/logos/menu.png">
+            </button>
+            <ul id="navList" class="navHiden">
+                <li>
+                    <a href="/private/Home">
+                        <figure>
+                            <img src="/logos/home.png">
+                        </figure>
+                        <p>Accueil</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/private/Settings">
+                        <figure>
+                            <img src="/logos/parametres.png">
+                        </figure>
+                        <p>Paramètres</p>
+                    </a>
+                </li>
+                <li th:if="${user.isAdmin()}">
+                    <a href="/private/admin/Administration">
+                        <figure>
+                            <img src="/logos/parametres.png">
+                        </figure>
+                        <p>Administration</p>
+                    </a>
+                </li>
+                <li>
+                    <button  id="deconnexion">
+                        <figure>
+                            <img src="/logos/exit.png">
+                        </figure>
+                        <p>Deconnexion</p>
+                    </button>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <header th:fragment="authHeader">
+        <h1>Heiveryone</h1>
+    </header>
+
+    <aside th:fragment="propositionOfStalk">
+        <h2>Vous avez peut être envie de stalker...</h2>
+        <a class="card" th:each="propUser: ${users}" th:href="'/private/account?id='+${propUser.getId()}">
+            <section>
+                <div class="userAvatar">
+                    <img th:src="${propUser.getAvatarPath()}">
+                </div>
+                <div class="userInfo">
+                    <div class="userName">
+                        <h3 th:text="${propUser.getName()}+' '+${propUser.getLastName()}"></h3>
+                        <h3 th:text="${'@'+propUser.getIdentifiant()}"></h3>
+                    </div>
+                </div>
+            </section>
+        </a>
+    </aside>
+
+    <footer th:fragment="footer">
+        <p>HEI © 2018</p>
+    </footer>
+
+</body>
+</html>

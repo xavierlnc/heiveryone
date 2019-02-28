@@ -1,0 +1,103 @@
+/*
+- Body -
+ */
+
+main {
+    margin: 1em 25%;
+    text-align: center;
+}
+
+article {
+    min-width: 30em;
+    margin: 4em 0 1em 0;
+    border: 1px solid #dd3f3f;
+    border-radius: 0.3em;
+    background-color: #eeeeee;
+}
+
+section.headerSection {
+    background-color: #dd3f3f;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+    margin: 0;
+}
+
+section.headerSection h2 {
+    color: white;
+    font-size: 2.5em;
+    padding: 0.7em;
+    margin: 0;
+}
+
+section.bodySection {
+    text-align: center;
+    padding: 0.3em;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    font-weight: normal;
+    text-align: right;
+    font-size:1.5em;
+    width: 50%;
+    padding: 0.5em 0.5em;
+}
+
+td {
+    width: 50%;
+    text-align: left;
+    padding: 0.5em 0.5em;
+}
+
+td textarea {
+    font-size: 1em;
+    padding: 0.5em;
+}
+
+input[type="text"], input[type="date"], input[type="email"], input[type="password"] {
+    font-size: 1.5em;
+}
+
+input[type="file"] {
+    font-size: 1em;
+}
+
+select {
+    font-size: 1em;
+    width: 6em;
+}
+
+button.btn {
+    background-color: #dd3f3f;
+    padding: 0.5em 2em;
+    border: none;
+    height: 3em;
+    border-radius: 1.5em;
+    color: white;
+    margin: 2em;
+    font-size: 1.5em;
+}
+
+button.btn:hover {
+    background-color: #dd5d5d;
+}
+
+
+section.bodySection h3 {
+    font-size: 2em;
+    margin: 1em 0 0 0;
+    color: #dd3f3f;
+}
+
+tr p {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+
+table img {
+    width: 15em;
+}

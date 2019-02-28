@@ -1,0 +1,211 @@
+@font-face{
+    font-family: 'Raleway-Regular';
+    src: url('../../fonts/Raleway-Regular.woff2') format('woff2'),
+    url('../../fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Raleway-Thin';
+    src: url('../../fonts/Raleway-Thin.woff2') format('woff2'),
+    url('../../fonts/Raleway-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: Raleway-Thin, Verdana, sans-serif;
+}
+
+p, td, .txtbox, .btn {
+    font-family: Raleway-Regular, Verdana, sans-serif;
+}
+
+/*
+- En tête -
+ */
+
+header {
+    background-color: #dd3f3f;
+    height: 5em;
+    display: flex;
+    margin: 0;
+}
+
+h1 {
+    letter-spacing: 0.1em;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+/*
+- Body -
+ */
+
+main {
+    text-align: center;
+}
+
+.warning {
+    font-size: 2em;
+    color: #dd3f3f;
+}
+
+.box {
+    margin: 5% auto;
+    width: 60em;
+    background-color: #eeeeee;
+    border: 2px solid #dd3f3f;
+    text-align: center;
+    border-radius: 1em;
+}
+
+section.box h2 {
+    padding: 1em 0;
+    font-size: 2em;
+    width: 100%;
+    color: white;
+    margin-top: 0;
+    background-color: #dd3f3f;
+    border-top-left-radius: 0.45em;
+    border-top-right-radius: 0.45em;
+}
+
+section.box p {
+    width: 100%;
+    font-size: 1.5em;
+}
+
+section.box a {
+    padding-left: 0.5em;
+    text-align: left;
+    color: #dd3f3f;
+    text-decoration: none;
+}
+
+section.box a:hover {
+    text-decoration: underline;
+    color: #dd5d5d;
+}
+
+
+section.box table {
+    margin: auto;
+    width: 100%;
+}
+
+section.box td {
+    text-align: right;
+    font-size: 1.5em;
+    width: 40%;
+    margin: 1em;
+}
+
+section.box th {
+    text-align: left;
+    font-size: 1.5em;
+    width: 60%;
+    margin: 1em;
+}
+
+section.box .btn {
+    margin: 0.5em auto;
+    border-radius: 1em;
+    background-color: #dd3f3f;
+    color: white;
+    border: none;
+    width: 75%;
+    font-size: 1.5em;
+    height: 2em;
+    transition: background-color 0.2s;
+    vertical-align: center;
+}
+
+section.box .btn:hover {
+    background-color: #dd5d5d;
+}
+
+section.box div.userInput {
+    text-align: center;
+}
+
+section.box input.txtbox {
+    display: block;
+    margin: 1em auto;
+    border: none;
+    font-size: 1.2em;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    width: 30%;
+}
+
+/* JS */
+.wrongTxtbox {
+    display: block;
+    margin: 1em auto;
+    border: 1px solid #dd3f3f;
+    font-size: 1.2em;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    width: 30%;
+}
+
+#warnInfo {
+    color: #dd3f3f;
+    font-size: 1.5em;
+}
+
+section.box input {
+    height: 1.5em;
+}
+
+section.box em {
+    font-style: italic;
+}
+
+.inscrire {
+    text-align: center;
+    margin: 5em auto;
+}
+
+section.inscrire h2 {
+    font-size: 4em;
+}
+
+section.inscrire p {
+    font-size: 2em;
+}
+section.inscrire a {
+    color: #dd3f3f;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+section.inscrire a:hover {
+    color: #dd5d5d;
+    text-decoration: underline;
+}
+
+/*
+- Pied de page -
+ */
+
+footer {
+    height: 5em;
+    background-color: lightgrey;
+    border-top: 2px solid #dd3f3f;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+footer p {
+    font-size: 1em;
+    color: white;
+}
+

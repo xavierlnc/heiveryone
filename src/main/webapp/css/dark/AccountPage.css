@@ -1,0 +1,217 @@
+/*
+- Body -
+ */
+
+main {
+    margin: auto 30%;
+    min-width: 30em;
+}
+
+article.user {
+    background-color: #3e3e3e;
+    margin: 1em auto;
+}
+
+article.user .userMainInfo {
+    display: flex;
+    padding: 3em;
+}
+
+article.user .userAvatar {
+    width: 10em;
+    min-width: 10em;
+    margin-right: 2em;
+}
+
+article.user div.userAvatar img  {
+    width: 10em;
+    height: 10em;
+}
+article.user .userInfo {
+    width: 60%;
+    height: 10em;
+    margin: 0;
+    text-align: center;
+}
+
+article.user div.userInfo h2 {
+    color: #f00000;
+    font-size: 2.5em;
+    margin: auto;
+}
+
+article.user div.userInfo h3 {
+    font-size: 1.5em;
+    margin: 0.5em auto;
+    color: white;
+}
+
+article.user .userDescription {
+    padding: 1em;
+    border-top: 2px solid #515151;
+}
+
+article.user div.userDescription p {
+    font-size: 1em;
+    width: 100%;
+    text-align: justify;
+    color: white;
+}
+
+
+article.user div.userOtherInfo {
+    padding: 1em;
+    border-top: 2px solid #515151;
+    color: white;
+}
+
+article.user div.stalkInfo {
+    display: flex;
+}
+
+article.user div.secondaryInfo {
+    display: flex;
+}
+
+article.user p.rightP {
+    width: 50%;
+    text-align: right;
+}
+
+article.user p.leftP {
+    width: 50%;
+    text-align: left;
+}
+
+article.user .stalkSection {
+    padding: 1em auto;
+    border-top: 2px solid #515151;
+    width: 100%;
+    text-align: center;
+}
+
+article.user div.stalkSection button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.5em;
+    background-color: #f00000;
+    border-radius: 1em;
+    color: white;
+    padding: 0.3em 1em;
+    margin: 1em;
+    text-align: center;
+    border: none;
+}
+
+article.user div.stalkSection button:hover {
+    background-color: #dd3f3f;
+    color: lightgrey;
+}
+
+article.post {
+    margin: 1em auto;
+    background-color: white;
+    padding: 0;
+    border-radius: 0.3em;
+}
+
+article.post .postHeader {
+    display: flex;
+    background-color: black;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+}
+
+article.post .postAuthorAvatar {
+    width: 2.5em;
+    height: 2.5em;
+    margin: auto 0.5em auto 0.5em;
+    border-radius: 100%;
+}
+
+article.post .postAuthor {
+    font-size: 1.2em;
+    padding: 0.8em 0.5em;
+    margin: auto;
+    width: 45%;
+}
+
+article.post h2.postAuthor a {
+    color: white;
+    text-decoration: none;
+}
+
+article.post h2.postAuthor a:hover {
+    color: #f00000;
+}
+
+article.post .postDate {
+    color: white;
+    margin: 0;
+    padding: 0.8em 1em;
+    font-size: 1.2em;
+    text-align: right;
+    width: 45%;
+}
+
+article.post section.postOption {
+    background-color: #3e3e3e;
+    border-top: 1px solid #f00000;
+    padding: 0.2em 1em;
+}
+
+article section.postOption button{
+    border: none;
+    background-color: #3e3e3e;
+    color: white;
+}
+
+article section.postOption button:hover{
+    color: #f00000;
+}
+
+article section.postBody {
+    background-color: #3e3e3e;
+}
+
+article.post p.postTexte {
+    margin: 0;
+    color: white;
+    padding: 1em;
+    border-top: 1px solid #dd3f3f;
+    font-size: 1.1em;
+
+}
+
+
+article section.postLike {
+    border-top: 1px solid #f00000;
+    background-color: #3e3e3e;
+    padding: 0.5em 1em;
+    display: flex;
+}
+
+article section.postLike p{
+    margin: 0;
+    color: white;
+}
+
+article section.postLike button{
+    background-color: #3e3e3e;
+    color: white;
+    border: none;
+    margin: auto 0.5em;
+    display: inline-flex;
+    align-items: center;
+}
+
+article section.postLike button:hover{
+    color: #f00000;
+}
+
+
+article section.postLike button img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.4em;
+}

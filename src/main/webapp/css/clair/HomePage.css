@@ -1,0 +1,157 @@
+/*
+- Body -
+ */
+.mainBody {
+    display: flex;
+}
+
+main {
+    margin: 1em 30% 3em 5%;
+    min-width: 40%;
+}
+
+article.newpost {
+    margin: 1em auto;
+    background-color: white;
+    padding: 0;
+    text-align: center;
+    border-radius: 0.3em;
+}
+
+article.newpost h2 {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0.8em 1em;
+}
+
+article.newpost textarea {
+    resize: none;
+    margin: 0.5em auto;
+    width: 95%;
+    padding: 0.2em 0.2em;
+    font-size: 1em;
+}
+
+article.newpost .btn {
+    margin: 0.5em auto;
+    border-radius: 1em;
+    background-color: #dd3f3f;
+    color: white;
+    border: none;
+    width: 30%;
+    font-size: 1em;
+    height: 2em;
+    transition: background-color 0.2s;
+}
+
+article.newpost button.btn:hover {
+    background-color: #dd5d5d;
+}
+
+article.post {
+    margin: 1em auto;
+    background-color: white;
+    padding: 0;
+    border-radius: 0.3em;
+}
+
+article .postHeader {
+    display: flex;
+    background-color: #dd3f3f;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+}
+
+article .postAuthorAvatar {
+    width: 2.5em;
+    height: 2.5em;
+    margin: auto 0.5em auto 0.5em;
+    border-radius: 100%;
+}
+
+article .postAuthor {
+    font-size: 1.2em;
+    padding: 0.8em 0.5em;
+    margin: auto;
+    width: 45%;
+}
+
+article h2.postAuthor a {
+    color: white;
+    text-decoration: none;
+}
+
+article h2.postAuthor a:hover {
+     color: lightgrey;
+ }
+
+article .postDate {
+    color: white;
+    margin: 0;
+    padding: 0.8em 1em;
+    font-size: 1.2em;
+    text-align: right;
+    width: 45%;
+}
+
+article section.postOption {
+    background-color: #eeeeee;
+    border-top: 1px solid black;
+    padding: 0.2em 1em;
+}
+
+article section.postOption button{
+    border: none;
+    background-color: #eeeeee;
+    color: black;
+}
+
+article section.postOption button:hover{
+     color: #aaaaaa;;
+ }
+
+article p.postTexte {
+    margin: 0;
+    padding: 1em;
+    border-top: 1px solid black;
+    font-size: 1.1em;
+
+}
+
+article section.postLike {
+    border-top: 1px solid #aaaaaa;
+    padding: 0.5em 1em;
+    display: flex;
+}
+
+article section.postLike p{
+    margin: 0;
+}
+
+article section.postLike button{
+    background-color: white;
+    color: dodgerblue;
+    border: none;
+    margin: auto 0.5em;
+    display: inline-flex;
+    align-items: center;
+}
+
+article section.postLike button:hover{
+    color: rgba(30, 144, 255, 0.56);
+}
+
+article section.postLike button img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.4em;
+}
+
+/*
+- JavaScript -
+ */
+
+.txtBoxWrong {
+    border: 1px solid #dd3f3f;
+}

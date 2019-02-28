@@ -1,0 +1,44 @@
+stages:
+ - tests
+ - package
+
+test-job:
+  image: maven:3.3-jdk-8
+  stage: tests
+  script:
+  - mvn test
+
+package-war-job:
+  image: maven:3.3-jdk-8
+  stage: package
+  script:
+  - mvn package -DskipTests
+  artifacts:
+    paths:
+    - target/*/css/*.css
+    - target/*/fonts/*.ttf
+    - target/*/fonts/*.woff2
+    - target/*/fonts/OFL.txt
+    - target/*/fonts/desktop.ini
+    - target/*/META-INF/*.MF
+    - target/*/WEB-INF/classes/*/*.class
+    - target/*/WEB-INF/classes/logback.xml
+    - target/*/WEB-INF/lib/*.jar
+    - target/*/WEB-INF/Templates/*.html
+    - target/*/WEB-INF/web.xml
+    expire_in: 1 week
+
+package-image-job:
+  image: docker:stable
+  stage: package
+  services:
+   - docker:dind
+  variables:
+    CONTAINER_IMAGE: registry.gitlab.com/$CI_PROJECT_PATH
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+  before_script:
+   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+   - docker build -t $CONTAINER_IMAGE:latest .
+   - docker push $CONTAINER_IMAGE:latest

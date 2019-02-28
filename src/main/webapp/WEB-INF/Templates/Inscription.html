@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Heiveryone</title>
+        <link rel="stylesheet" type="text/css" href="/css/clair/AuthPages.css" />
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <script src="/js/InscriptionPage.js" type="application/javascript"></script>
+    </head>
+    <body>
+        <header th:replace="~{fragments::authHeader}"></header>
+        <main>
+            <h2 class="warning" th:if="${idused}">Identifiant Indisponible !</h2>
+            <section class="box">
+                <h2>Inscription</h2>
+                <p><a href="/Connexion"> < Retour à la page de connexion</a></p>
+                <input class="txtbox" type="text" name="nom" id="nom" placeholder="Nom">
+                <input class="txtbox" type="text" name="prenom" id="prenom" placeholder="Prenom">
+                <input class="txtbox" type="date" name="date_de_naissance" id="date_de_naissance" placeholder="Date de naissance">
+                <input class="txtbox" type="email" name="mail" id="mail" placeholder="E-mail">
+                <input class="txtbox" type="text" name="identifiant" id="identifiant" placeholder="Identifiant">
+                <input class="txtbox" type="password" name="password" id="password" placeholder="Mot de passe">
+                <button class="btn" id="btn">S'inscrire</button>
+            </section>
+        </main>
+        <footer th:replace="~{fragments::footer}"></footer>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Heiveryone</title>
+        <link rel="stylesheet" type="text/css" href="/css/clair/AuthPages.css" />
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <script src="/js/ConnexionPage.js" type="application/javascript"></script>
+    </head>
+    <body>
+        <header th:replace="~{fragments::authHeader}"></header>
+        <main>
+            <section class="box">
+                <h2>Connexion</h2>
+                <div class="userInput">
+                    <input class="txtbox" type="text" name="identifiant" id="identifiant" placeholder="Identifiant"/>
+                    <input class="txtbox" type="password" name="pass" id="pass" placeholder="Mot de passe"/>
+                </div>
+                <p id="warnInfo"></p>
+                <button class="btn" id ="btn" t>Se connecter</button>
+            </section>
+            <section class="inscrire">
+                <h2>Toujours pas inscrit ?</h2>
+                <p>Pour y remedier, <a href="/Inscription">c'est par ici</a> !</p>
+            </section>
+        </main>
+        <footer th:replace="~{fragments::footer}"></footer>
+</body>
+</html>

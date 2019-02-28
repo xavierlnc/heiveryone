@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rechercher</title>
+    <link rel="stylesheet" type="text/css" th:href="'/css/'+${user.getTheme()}+'/SearchPage.css'" />
+    <link rel="stylesheet" type="text/css" th:href="'/css/'+${user.getTheme()}+'/Fragments.css'" />
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <script src="/js/Fragments.js" type="application/javascript"></script>
+    <script src="/js/SearchPage.js" type="application/javascript"></script>
+</head>
+<body>
+    <header th:replace="~{fragments::mainHeader}"></header>
+
+    <main>
+        <h2 th:text="'Résultats pour '+${search}+' :'"></h2>
+        <article th:if="${noUser}">
+            <p>Aucun résultats !</p>
+        </article>
+
+        <a th:href="'/private/account?id='+${user.getId()}" class="card" th:unless="${noUser}" th:each="user: ${liste}">
+            <article class="userCard" >
+                <div class="userAvatar">
+                    <img th:src="${user.getAvatarPath()}">
+                </div>
+                <div class="userInfo">
+                    <section class="userInfoHeader">
+                        <h3 class="userName" th:text="${user.getName()}+' '+${user.getLastName()}"></h3>
+                        <p class="userIdentifiant" th:text="'@'+${user.getIdentifiant()}"></p>
+                    </section>
+                    <section class="userInfoBody">
+                        <p class="userDescription" th:text="${user.getDescription()}"></p>
+                    </section>
+                </div>
+            </article>
+        </a>
+    </main>
+
+    <footer th:replace="~{fragments::footer}"></footer>
+</body>
+</html>
